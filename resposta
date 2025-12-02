@@ -20,9 +20,6 @@
 <body>
 
 <form>
-    <!-- ===========================================================
-                         DADOS PESSOAIS
-    ============================================================ -->
     <fieldset>
         <legend>Dados Pessoais</legend>
 
@@ -84,10 +81,6 @@
         <input type="file" id="cnh" name="cnh" required><br><br>
 
     </fieldset>
-
-    <!-- ===========================================================
-                         ESCOLHA DO CARRO
-    ============================================================ -->
     <fieldset>
         <legend>Escolha do Carro</legend>
 
@@ -118,10 +111,6 @@
         <input type="range" id="intensidade" name="intensidade"
         min="0" max="100" value="50">
     </fieldset>
-
-    <!-- ===========================================================
-                               ENTREGA
-    ============================================================ -->
     <fieldset>
         <legend>Entrega</legend>
 
@@ -134,10 +123,6 @@
         <label for="mes">Mês da compra:</label><br>
         <input type="month" id="mes" name="mes" required><br><br>
     </fieldset>
-
-    <!-- ===========================================================
-                            OPINIÃO
-    ============================================================ -->
     <fieldset>
         <legend>Sua opinião</legend>
 
@@ -145,10 +130,6 @@
         <textarea id="opiniao" name="opiniao" rows="4" cols="40" required
         placeholder="Exemplo: Espero que o carro tenha boa autonomia..."></textarea><br><br>
     </fieldset>
-
-    <!-- ===========================================================
-                         AVALIAÇÃO BYD
-    ============================================================ -->
     <fieldset>
         <legend>Avaliação dos Modelos BYD</legend>
 
