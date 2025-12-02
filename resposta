@@ -3,177 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabelas</title>
+    <title>Formulário de Cadastro</title>
+
     <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
+        form {
+            border: 1px solid #000;
+            padding: 15px;
+            width: 500px;
+            margin-bottom: 20px;
         }
-        table {
-            width: 1000px;
-            border-collapse: collapse ;
-            /* Obrigatório para ter o título da tabela fixo */
-            position: relative;
-        }
-        td, th {
-            border: 1px solid rgb(0, 0, 0);
-            padding: 10px;
-        }
-        thead, tfoot {
-            background-color: rgb(241, 239, 239);
-            color: rgb(15, 14, 14);
-        }
-
-        thead > tr > th {
-            /* No título da linha do cabeçalho vou grudar "sticky" */
-            position: sticky; /* grudar */
-            top: 0; /* na posição 0 */
-            background-color: gray;
-
-        }
-        td.num {
-            text-align: right;
-        }
-        caption {
-            /* Tamanho da fonte */
-            font-size: 1.5em;
-            /* Para colocar em negrito */
-            font-weight: bold;
-            /* Para deixar mais espaçado */
-            padding: 10px;
-            /* Colocar um fundo no meu caption */
-            background-color: rgb(206, 201, 201);
-
-        }
-        
-        tbody > tr:nth-child(2n) {
-            background-color: rgb(231, 224, 224);
-
+        fieldset {
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-    <table>
-        <caption>População dos Estados Brasileiros - 2024</caption>
-        <thead>
-             <tr>
-        <th>Estado</th>
-        <th>População</th>
-        <th>Comando HTML Utilizado</th>
-    </tr>
 
-    <tr>
-        <td><b>Acre</b></td>
-        <td class="num"><mark><b>830.018</b></mark></td>
-        <td><b>Negrito</b> e <mark>Destacado</mark></td>
-    </tr>
+<form>
+    <!-- ===========================================================
+                         DADOS PESSOAIS
+    ============================================================ -->
+    <fieldset>
+        <legend>Dados Pessoais</legend>
 
-    <tr>
-        <td><em>Alagoas</em></td>
-        <td class="num">3.365.351</td>
-        <td><em>'Itálico'</em></td>
-    </tr>
+        <label for="nome">Nome completo:</label><br>
+        <input type="text" id="nome" name="nome" required
+        placeholder="Digite seu nome completo"><br><br>
 
-    <tr>
-        <td><u>Amapá</u></td>
-        <td class="num">877.613</td>
-        <td><u>Texto sublinhado</u></td>
-    </tr>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required
+        placeholder="seuemail@exemplo.com"><br><br>
 
-    <tr>
-        <td><s>Amazonas</s></td>
-        <td class="num"><u>4.269.995</u></td>
-        <td><s>Texto riscado</s> e <u>Texto sublinhado</u></td>
-    </tr>
+        <label for="telefone">Telefone:</label><br>
+        <input type="tel" id="telefone" name="telefone" required
+        placeholder="(11)91234-5678"
+        pattern="^\(\d{2}\)\d{5}-\d{4}$"
+        title="Use o formato (XX)XXXXX-XXXX"><br><br>
 
-    <tr>
-        <td><sup>Bahia</sup></td>
-        <td class="num">14.141.626</td>
-        <td><sup>Texto sobrescrito</sup></td>
-    </tr>
+        <label for="senha">Crie uma senha:</label><br>
+        <input type="password" id="senha" name="senha" required
+        minlength="4" placeholder="Digite sua senha"><br><br>
 
-    <tr>
-        <td><abbr title="Ceará">CE</abbr></td>
-        <td class="num">9.240.580</td>
-        <td><abbr title="Abreviação">Abreviação</abbr></td>
-    </tr>
+        <label for="idade">Idade:</label><br>
+        <input type="number" id="idade" name="idade" required min="18" max="120"
+        placeholder="Digite sua idade"><br><br>
 
-    <tr>
-        <td><b>Distrito Federal</b></td>
-        <td class="num">3.098.883</td>
-        <td><b>Texto em negrito</b></td>
-    </tr>
+        <label for="estado">Estado de entrega:</label><br>
+        <select id="estado" name="estado" required>
+            <option value="">--Selecione seu estado--</option>
+            <option>Acre</option>
+            <option>Alagoas</option>
+            <option>Amapá</option>
+            <option>Amazonas</option>
+            <option>Bahia</option>
+            <option>Ceará</option>
+            <option>Distrito Federal</option>
+            <option>Espirito Santo</option>
+            <option>Goiás</option>
+            <option>Maranhão</option>
+            <option>Mato Grosso</option>
+            <option>Mato Grosso do Sul</option>
+            <option>Minas Gerais</option>
+            <option>Pará</option>
+            <option>Paraíba</option>
+            <option>Paraná</option>
+            <option>Pernambuco</option>
+            <option>Piauí</option>
+            <option>Rio de Janeiro</option>
+            <option>Rio Grande do Norte</option>
+            <option>Rio Grande do Sul</option>
+            <option>Rondônia</option>
+            <option>Roraima</option>
+            <option>Santa Catarina</option>
+            <option>São Paulo</option>
+            <option>Sergipe</option>
+            <option>Tocantins</option>
+        </select><br><br>
 
-    <tr>
-        <td><q>Espirito Santo</q></td>
-        <td class="num">4.108.508</td>
-        <td><q>Citação curta</q></td>
-    </tr>
+        <label for="cnh">Envie uma foto da sua CNH:</label><br>
+        <input type="file" id="cnh" name="cnh" required><br><br>
 
-    <tr>
-        <td><cite>Goiás</cite></td>
-        <td class="num">7.206.589</td>
-        <td><cite>Citação de fonte</cite></td>
-    </tr>
+    </fieldset>
 
-    <tr>
-        <td><code>Maranhão</code></td>
-        <td class="num">6.775.805</td>
-        <td><code>Texto monoespaçado</code></td>
-    </tr>
+    <!-- ===========================================================
+                         ESCOLHA DO CARRO
+    ============================================================ -->
+    <fieldset>
+        <legend>Escolha do Carro</legend>
 
-    <tr>
-        <td><pre>Mato Grosso</pre></td>
-        <td class="num">3.658.813</td>
-        <td><pre>Texto pré-formatado</pre></td>
-    </tr>
+        <input type="radio" id="seal" name="modelo" value="BYD Seal" required>
+        <label for="seal">BYD Seal</label><br>
 
-    <tr>
-        <td><small>Paraíba</small></td>
-        <td class="num">4.059.905</td>
-        <td><small>Texto pequeno</small></td>
-    </tr>
+        <input type="radio" id="han" name="modelo" value="BYD Han">
+        <label for="han">BYD Han</label><br>
 
-    <tr>
-        <td><sub>Piauí</sub></td>
-        <td class="num">3.281.480</td>
-        <td><sub>Texto subscrito</sub></td>
-    </tr>
+        <input type="radio" id="song" name="modelo" value="BYD Song Plus">
+        <label for="song">BYD Song Plus</label><br><br>
 
-    <tr>
-        <td><blockquote>Rio de Janeiro</blockquote></td>
-        <td class="num">16.054.524</td>
-        <td><blockquote>Citação em bloco</blockquote></td>
-    </tr>
+        <p><b>Itens adicionais:</b></p>
 
-    <tr>
-        <td><b>Rio Grande do Sul</b></td>
-        <td class="num">10.882.965</td>
-        <td><b>Negrito</b></td>
-    </tr>
+        <input type="checkbox" id="som" name="itens" value="Som Premium">
+        <label for="som">Som Premium</label><br>
 
-    <tr>
-        <td><i>Rondônia</i></td>
-        <td class="num">1.616.379</td>
-        <td><i>Itálico</i></td>
-    </tr>
+        <input type="checkbox" id="ar" name="itens" value="Ar-condicionado Digital">
+        <label for="ar">Ar-condicionado Digital</label><br>
 
-    <tr>
-        <td><mark>Roraima</mark></td>
-        <td class="num">636.707</td>
-        <td><mark>Texto destacado</mark></td>
-    </tr>
+        <input type="checkbox" id="camera" name="itens" value="Câmera 360º">
+        <label for="camera">Câmera 360º</label><br><br>
 
-    <tr>
-        <td><abbr title="Tocantins">TO</abbr></td>
-        <td class="num">1.607.363</td>
-        <td><abbr title="Abreviação">Abreviação</abbr></td>
-    </tr>
+        <label for="cor">Cor do carro:</label><br>
+        <input type="color" id="cor" name="cor" required><br><br>
 
-    <tr style="background:#969393;">
-        <td><b>Total da população estimada:</b></td>
-        <td><b>Soma total</b></td>
-        <td>Realizar a soma das colunas</td>
-    </tr>
-</table>  
+        <label for="intensidade">Intensidade da cor (brilho):</label><br>
+        <input type="range" id="intensidade" name="intensidade"
+        min="0" max="100" value="50">
+    </fieldset>
+
+    <!-- ===========================================================
+                               ENTREGA
+    ============================================================ -->
+    <fieldset>
+        <legend>Entrega</legend>
+
+        <label for="data">Data desejada para a entrega:</label><br>
+        <input type="date" id="data" name="data" required><br><br>
+
+        <label for="hora">Hora preferida:</label><br>
+        <input type="time" id="hora" name="hora" required><br><br>
+
+        <label for="mes">Mês da compra:</label><br>
+        <input type="month" id="mes" name="mes" required><br><br>
+    </fieldset>
+
+    <!-- ===========================================================
+                            OPINIÃO
+    ============================================================ -->
+    <fieldset>
+        <legend>Sua opinião</legend>
+
+        <label for="opiniao">Conte sua expectativa:</label><br>
+        <textarea id="opiniao" name="opiniao" rows="4" cols="40" required
+        placeholder="Exemplo: Espero que o carro tenha boa autonomia..."></textarea><br><br>
+    </fieldset>
+
+    <!-- ===========================================================
+                         AVALIAÇÃO BYD
+    ============================================================ -->
+    <fieldset>
+        <legend>Avaliação dos Modelos BYD</legend>
+
+        <label for="byd1">Avalie o BYD Dolphin Plus:</label><br>
+        <input type="text" id="byd1" name="byd1" required
+        placeholder="0 a 5"
+        pattern="^[0-5]$"
+        title="A nota deve ser entre 0 e 5"><br><br>
+
+        <label for="byd2">Avalie o BYD GS:</label><br>
+        <input type="text" id="byd2" name="byd2" required
+        placeholder="0 a 5"
+        pattern="^[0-5]$"
+        title="A nota deve ser entre 0 e 5"><br><br>
+
+        <label for="byd3">Avalie o BYD Mini:</label><br>
+        <input type="text" id="byd3" name="byd3" required
+        placeholder="0 a 5"
+        pattern="^[0-5]$"
+        title="A nota deve ser entre 0 e 5"><br><br>
+
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpar">
+    </fieldset>
+
+</form>
+
 </body>
 </html>
